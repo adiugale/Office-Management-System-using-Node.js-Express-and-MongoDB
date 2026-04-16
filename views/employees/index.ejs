@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Employee Management</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-100">
+
+<div class="max-w-6xl mx-auto p-6">
+
+  <h1 class="text-3xl font-bold mb-6 text-gray-800">
+    Employee Management System
+  </h1>
+
+  <div class="bg-white p-4 rounded-xl shadow mb-6">
+    <h2 class="text-lg font-semibold mb-2">Manage Departments</h2>
+
+    <div class="flex gap-2 mb-3">
+      <input id="deptName" placeholder="Department Name" class="border p-2 rounded w-full">
+      <input id="deptDesc" placeholder="Description" class="border p-2 rounded w-full">
+      <button onclick="addDepartment()" class="bg-green-600 text-white px-4 rounded hover:bg-green-700">
+        Save
+      </button>
+    </div>
+
+    <ul id="deptList" class="text-sm text-gray-700 space-y-1"></ul>
+  </div>
+
+
+  <div class="bg-white p-6 rounded-xl shadow mb-6">
+    <h2 class="text-xl font-semibold mb-4">Add / Edit Employee</h2>
+
+    <form id="employeeForm" class="grid grid-cols-1 md:grid-cols-3 gap-4">
+
+      <div>
+        <label class="text-sm text-gray-600">Name</label>
+        <input id="name" type="text" class="border p-2 rounded w-full" placeholder="Enter name" required>
+      </div>
+
+      <div>
+        <label class="text-sm text-gray-600">Email</label>
+        <input id="email" type="email" class="border p-2 rounded w-full" placeholder="Enter email" required>
+      </div>
+
+      <div>
+        <label class="text-sm text-gray-600">Job Title</label>
+        <input id="jobTitle" type="text" class="border p-2 rounded w-full" placeholder="Enter job title">
+      </div>
+
+      <div>
+        <label class="text-sm text-gray-600">Department</label>
+        <select id="department" class="border p-2 rounded w-full">
+          <option value="">Select Department</option>
+        </select>
+      </div>
+
+      <div>
+        <label class="text-sm text-gray-600">Supervisor</label>
+        <select id="supervisor" class="border p-2 rounded w-full">
+          <option value="">Select Supervisor</option>
+        </select>
+      </div>
+
+      <div>
+        <label class="text-sm text-gray-600">Country</label>
+        <select id="country" class="border p-2 rounded w-full">
+          <option value="">Select Country</option>
+        </select>
+      </div>
+
+      <div>
+        <label class="text-sm text-gray-600">State</label>
+        <select id="state" class="border p-2 rounded w-full">
+          <option value="">Select State</option>
+        </select>
+      </div>
+
+      <div>
+        <label class="text-sm text-gray-600">City</label>
+        <select id="city" class="border p-2 rounded w-full">
+          <option value="">Select City</option>
+        </select>
+      </div>
+
+      <button type="submit" class="md:col-span-3 bg-blue-600 text-white p-2 rounded hover:bg-blue-700">
+        Save Employee
+      </button>
+
+    </form>
+  </div>
+
+ 
+  <div class="flex gap-4 mb-4">
+    <input id="search" type="text" placeholder="Search employees..." class="border p-2 rounded w-full">
+    <input id="jobFilter" type="text" placeholder="Filter by job title..." class="border p-2 rounded w-full">
+  </div>
+
+  <div class="bg-white rounded-xl shadow overflow-hidden">
+    <table class="w-full">
+      <thead class="bg-gray-200">
+        <tr>
+          <th class="p-3">Name</th>
+          <th class="p-3">Email</th>
+          <th class="p-3">Job</th>
+          <th class="p-3">Department</th>
+          <th class="p-3">Location</th>
+          <th class="p-3">Supervisor</th>
+          <th class="p-3">Actions</th>
+        </tr>
+      </thead>
+
+      <tbody id="employeeTable" class="divide-y">
+        <tr>
+          <td colspan="7" class="p-4 text-center text-gray-400">
+            No employees yet
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+
+  <div class="flex justify-between mt-4">
+    <button onclick="prevPage()" class="bg-gray-300 px-4 py-2 rounded">
+      Prev
+    </button>
+    <button onclick="nextPage()" class="bg-gray-300 px-4 py-2 rounded">
+      Next
+    </button>
+  </div>
+
+</div>
+
+<script src="/js/main.js"></script>
+
+</body>
+</html>
