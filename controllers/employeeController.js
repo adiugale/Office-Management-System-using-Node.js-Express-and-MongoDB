@@ -2,6 +2,22 @@ const Employee = require('../models/Employee');
 
 exports.createEmployee = async (req, res) => {
   try {
+    exports.createEmployee = async (req, res) => {
+  try {
+    console.log("BODY:", req.body); // 👈 HE LINE ADD KAR (try nantar)
+
+    const emp = new Employee(req.body);
+    await emp.save();
+
+    console.log("SAVED SUCCESS"); // 👈 optional pan useful
+
+    res.status(201).json(emp);
+  } catch (err) {
+    console.log("ERROR:", err.message); // 👈 error baghayla
+
+    res.status(500).json({ error: err.message });
+  }
+};
     const emp = new Employee(req.body);
     await emp.save();
     res.status(201).json(emp);
