@@ -1,4 +1,4 @@
-const API = "http://localhost:5000";
+const API = "https://office-management-system-using-node-js.onrender.com";
 
 let currentPage = 1;
 let currentEditId = null;
